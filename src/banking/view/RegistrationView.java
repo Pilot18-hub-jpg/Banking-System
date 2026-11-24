@@ -1,5 +1,5 @@
 
-package banking.boundary;
+package banking.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

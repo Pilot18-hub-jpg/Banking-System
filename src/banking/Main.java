@@ -1,6 +1,9 @@
 
 package banking;
 
+import banking.dao.DatabaseManager;
+import banking.model.*;
+
 import java.math.BigDecimal;
 import java.util.Arrays;
 

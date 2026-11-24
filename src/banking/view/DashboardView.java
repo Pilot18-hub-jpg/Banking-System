@@ -1,5 +1,5 @@
 
-package banking.boundary;
+package banking.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -12,6 +12,11 @@ public class DashboardView {
     private VBox layout;
     private Button registerCustomerButton;
     private Button viewCustomersButton;
+    private Button openAccountButton;
+    private Button viewAccountsButton;
+    private Button transactionsButton;
+    private Button depositWithdrawButton;
+    private Button logoutButton;
 
     public DashboardView() {
 
@@ -20,10 +25,11 @@ public class DashboardView {
 
         registerCustomerButton = new Button("Register Customer");
         viewCustomersButton = new Button("View Customers");
-        Button openAccountButton = new Button("Open Account");
-        Button viewAccountsButton = new Button("View Accounts");
-        Button transactionsButton = new Button("Transactions");
-        Button logoutButton = new Button("Logout");
+        openAccountButton = new Button("Open Account");
+        viewAccountsButton = new Button("View Accounts");
+        transactionsButton = new Button("Transaction History");
+        depositWithdrawButton = new Button("Deposit / Withdraw");
+        logoutButton = new Button("Logout");
 
         layout = new VBox(15);
         layout.setAlignment(Pos.CENTER);
@@ -36,6 +42,7 @@ public class DashboardView {
                 viewCustomersButton,
                 openAccountButton,
                 viewAccountsButton,
+                depositWithdrawButton,
                 transactionsButton,
                 logoutButton
         );
@@ -44,8 +51,32 @@ public class DashboardView {
     public VBox getLayout() {
         return layout;
     }
+
     public Button getRegisterCustomerButton() {
         return registerCustomerButton;
     }
 
+    public Button getViewCustomersButton() {
+        return viewCustomersButton;
+    }
+
+    public Button getOpenAccountButton() {
+        return openAccountButton;
+    }
+
+    public Button getViewAccountsButton() {
+        return viewAccountsButton;
+    }
+
+    public Button getTransactionsButton() {
+        return transactionsButton;
+    }
+
+    public Button getDepositWithdrawButton() {
+        return depositWithdrawButton;
+    }
+
+    public Button getLogoutButton() {
+        return logoutButton;
+    }
 }

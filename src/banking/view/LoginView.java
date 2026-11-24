@@ -1,5 +1,5 @@
 
-package banking.boundary;
+package banking.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -64,5 +64,11 @@ public class LoginView {
 
     public void showMessage(String message) {
         messageLabel.setText(message);
+    }
+
+    public void clearFields() {
+        usernameField.clear();
+        passwordField.clear();
+        messageLabel.setText("");
     }
 }

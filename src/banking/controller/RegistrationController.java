@@ -1,8 +1,11 @@
 
 package banking.controller;
 
-import banking.*;
-import banking.boundary.RegistrationView;
+import banking.view.RegistrationView;
+import banking.dao.DatabaseManager;
+import banking.model.BankAdministrator;
+import banking.model.Company;
+import banking.model.Individual;
 
 public class RegistrationController {
 
@@ -32,7 +35,7 @@ public class RegistrationController {
 
         String username = registrationView.getUsername();
         String password = registrationView.getPassword();
-        String customerId = registrationView.getCustomerId();
+        String customerId = registrationView.getCustomerId().trim();
         String address = registrationView.getAddress();
 
         if (username.isEmpty() || password.isEmpty()
@@ -70,6 +73,7 @@ public class RegistrationController {
 
             admin.registerCustomer(individual);
             DatabaseManager.saveCustomer(individual);
+            DatabaseManager.displayDatabaseRecords();
 
             registrationView.showMessage(
                     "Individual customer registered successfully!");
@@ -100,6 +104,7 @@ public class RegistrationController {
 
             admin.registerCustomer(company);
             DatabaseManager.saveCustomer(company);
+            DatabaseManager.displayDatabaseRecords();
 
             registrationView.showMessage(
                     "Company registered successfully!");

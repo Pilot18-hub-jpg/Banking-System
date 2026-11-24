@@ -1,9 +1,10 @@
 
 package banking;
 
-import banking.boundary.LoginView;
+import banking.view.LoginView;
 import banking.controller.LoginController;
-import banking.BankAdministrator;
+import banking.dao.DatabaseManager;
+import banking.model.BankAdministrator;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -12,6 +13,8 @@ public class BankingApp extends Application {
 
     @Override
     public void start(Stage stage) {
+        DatabaseManager.initializeDatabase();
+        DatabaseManager.displayDatabaseRecords();
 
         // Create a test administrator
         BankAdministrator admin = new BankAdministrator(

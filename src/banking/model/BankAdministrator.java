@@ -1,4 +1,4 @@
-package banking;
+package banking.model;
 
 public class BankAdministrator extends User {
 
@@ -24,5 +24,9 @@ public class BankAdministrator extends User {
     public void closeAccount(Customer c, Account a) {
         c.closeAccount(a);
         System.out.println("Admin closed account: " + a.getAccountNumber());
+    }
+
+    public String getBranch() {
+        return branch;
     }
 }
